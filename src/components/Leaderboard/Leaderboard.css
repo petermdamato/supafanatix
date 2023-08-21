@@ -1,0 +1,41 @@
+.brand-list {
+  list-style: none;
+  padding: 0;
+}
+
+.brand-item {
+  padding: 2px;
+  color:white;
+  margin-bottom: 5px;
+  transition: background-color 0.3s;
+  text-align:center;
+  cursor:default;
+}
+
+.brand-item text {
+  pointer-events: none;
+}
+
+.brand-item:hover {
+  background-color: #c0c0c0;
+}
+.brand-item {
+
+}
+
+.leaderboard {
+  margin-left:40px;
+  min-width:200px;
+}
+.leaderboard-headline {
+    color: white!important;
+    font-family: Signika!important;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top:-10px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+.leaderboard-innner {
+    background-color: #1f1f1f!important;
+}

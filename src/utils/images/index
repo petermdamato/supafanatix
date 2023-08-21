@@ -1,0 +1,9 @@
+import badBunny from './../../assets/badBunny.png';
+import lizzo from './../../assets/lizzo.jpg';
+
+const images = {
+    badBunny,
+    lizzo
+}
+
+export default images;

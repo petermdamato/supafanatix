@@ -1,0 +1,48 @@
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 24px); /* Adjust the tile size as needed */
+  grid-gap: 1px; /* Adjust the gap between tiles as needed */
+  max-width: 420px; /* Adjust the grid width as needed */
+  margin: 6px auto 0;
+}
+.image-match-dek {
+	color:white;
+	font-family:Raleway;
+	opacity:0.8;
+	max-width:320px;
+}
+.image-match-headline {
+	margin-bottom:0;
+}
+.color-tile {
+  width: 24px; /* Adjust the tile size as needed */
+  height: 24px; /* Adjust the tile size as needed */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.color-tile:hover {
+  opacity: 0.8;
+}
+
+  .tooltip {
+  	font-family: Signika;
+  	pointer-events: none;
+    visibility: hidden;
+    width: auto;
+    min-width:200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 8px;
+    position: relative;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .color-tile:hover .tooltip {
+    visibility: visible;
+  }

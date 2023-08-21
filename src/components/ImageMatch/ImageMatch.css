@@ -1,0 +1,14 @@
+.image-match-container-inner {
+	align-items: flex-start;
+	
+}
+.image-match-container {
+	padding:30px 0 0 40px;
+}
+
+.image-match-headline {
+		color:white!important;
+	  font-family:Signika!important;
+  font-size:22px;
+  text-transform: uppercase;
+}

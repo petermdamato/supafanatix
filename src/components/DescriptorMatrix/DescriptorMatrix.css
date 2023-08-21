@@ -1,0 +1,27 @@
+.matrix-container-inner {
+
+	width:100%!important;
+	
+}
+.matrix-container {
+	padding:30px 40px 0 40px;
+}
+.matrix-headline {
+		color:white!important;
+	  font-family:Signika!important;
+  font-size:22px;
+  text-transform: uppercase;
+  margin-bottom:4px;
+}
+.card-title {
+	font-family:Signika!important;
+	font-weight:400;
+	opacity:0.5;
+}
+.descriptor-matrix-dek {
+	color:white;
+	font-family:Raleway;
+	opacity:0.8;
+	max-width:74%;
+	margin-bottom:14px;
+}

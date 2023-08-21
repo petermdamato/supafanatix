@@ -1,0 +1,16 @@
+.dropdown-headline {
+		color:white!important;
+	  font-family:Signika!important;
+  font-size:22px;
+  text-transform: uppercase;
+}
+.dropdown-headline .dropdown-headline-artist-span {
+		color:#C54577!important;
+}
+.dropdown-headline .dropdown-headline-brand-span {
+		color:#63846E!important;
+		text-transform: uppercase;
+			  font-family:Signika!important;
+  font-size:22px;
+  margin-left:0!important;
+}

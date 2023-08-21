@@ -1,13 +1,226 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;700&family=Signika:wght@400;500&display=swap');
+
+/* Reset default margins and paddings */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Set box-sizing to border-box for all elements */
+* {
+  box-sizing: border-box;
+}
+.app-artist {
+  color:white!important;
+}
+/* Set a default font family and font size for the app */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Define styles for the app header */
+.app-header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 12px;
+}
+
+/* Define styles for the app footer */
+.app-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.app-footer p {
+  font-size: 14px;
+}
+
+/* Set a default background color for the app content */
+.app-content {
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Center the app main body horizontally */
+.app-main-body {
+  display: flex;
+  justify-content: center;
+}
+
+/* Set a default max width for the app content */
+.app-main-body {
+/*  max-width: 1200px;*/
+  margin: 0 auto;
+}
+.app-frontpage-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/*Front Page Styling*/
+.app-frontpage-inner * {
+  font-family:'Lato'!important;
+}
+
+.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+ border-color:#fff!important; 
+}
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused,.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  color:white!important;
+}
+.MuiOutlinedInput-notchedOutline legend span {
+  opacity:.2!important;
+  color:white!important;
+}
+.app-frontpage {
+  background-color:#000;
+}
+.app-frontpage-inner img {
+  height: 30vh;
+}
+.app-frontpage-searchbar {
+  min-width:200px!important;
+}
+.MuiAutocomplete-root {
+  width:40%!important;
+}
+.MuiInputBase-input {
+  color:#e52b9e!important;
+  font-weight:700!important;
+  font-family:Signika!important;
+  font-size:20px!important;
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  color:white!important;
+}
+.h-full {
+  min-height:100vh;
+}
+.app-mainpage-inner {
+  background-color:black!important;
+  overflow:auto;
+}
+.border-bottom {
+  border-bottom:1px white solid;
+}
+.border-right {
+  border-right:1px white solid;
+}
+.bg-gray-100 {
+  background-color: #000!important;
+}
+/*Main Page Styling*/
+.image-container {
+  border-right:1px white solid;
+}
+.image-container img {
+  max-height:160px!important;
+  margin:0 auto;
+}
+.nav-artist-image {
+  width: 80px;
+  height:80px; 
+  overflow:hidden;
+}
+.nav-artist-image img {
+  object-fit:cover;
+  width:100%;
+  height:100%;
+}
+.nav-artist-image-hero img {
+  object-fit:cover;
+  width:100%;
+  height:100%;
+}
+.nav-artist-container {
+  width:20%;
+  align-items: flex-start!important;
+}
+.nav-artist-container-hero {
+  width:100%;
+  margin-right:0!important;
+  align-items: flex-start!important;
+}
+.nav-artist-hero {
+  width:60%;
+  align-items: flex-start!important;
+  margin-left:40px!important;
+}
+.nav-artist-image-hero {
+  width: 140px;
+  height:140px; 
+  overflow:hidden;
+}
+.container-lower {
+  height:100%!important;
+  background-color: black!important;
+}
+.nav-artist-name-hero {
+  color:#e52b9e!important;
+  line-height:20px;
+  margin-left:10px;
+  font-family:Signika!important;
+  font-size:22px;
+  align-self: flex-end; 
+}
+.nav-artist {
+  height:80px!important;
+  margin:0 auto!important;
+  padding:0 10px;
+}
+.nav-artist-name {
+  color:#e52b9e!important;
+  line-height:20px;
+  margin-left:10px;
+  font-family:Signika!important;
+  min-width:100px;
+  max-width:100px;
+  font-size:22px;
+  align-self: flex-end; 
+}
+.nav-navigation li {
+  color:white!important;
+  font-family:Raleway!important;
+  font-size:20px;
+  padding-left:34px;
+}
+.selected-page a {
+  color:#e52b9e!important;
+}
+/* Define media query for smaller screens */
+@media (max-width: 768px) {
+  .app-main-body {
+    flex-direction: column;
+  }
+}
+.fill-screen {
+  width:100%!important;
+  max-width:4000px!important;
+  overflow:auto;
+}
+.fill-screen-inner {
+  width:100%!important;
+  overflow:auto!important;
+  overflow-y: hidden;
+}
+.autocomplete-unconstrained {
+/*  width:200%!important;*/
+/*  margin-right:400px!important;*/
 }
