@@ -41,6 +41,7 @@ const AutocompleteMenu = ({ options, onOptionSelect,artist }) => {
       onFocus={handleInputFocus}
       onBlur={handleInputBlur}
       options={options}
+      inputProps={{ style: { color: 'white' } }}
       value={artist&&artist.length > 0 ? artist : null}
       renderInput={(params) => (
         selected || artist && artist.length>0 ? <TextField {...params} 
