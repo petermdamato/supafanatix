@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;700&family=Signika:wght@400;500&display=swap');
-
+*, ::before, ::after {
+  --tw-ring-color:white!important;
+}
 /* Reset default margins and paddings */
 body, h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0;
@@ -17,9 +19,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 .\1ald77x.Mui-focused {
   color:white!important;
-}
-.css-1uvydh2, .css-1uvydh2 {
-  border:0 solid white!important;
 }
 .MuiFormLabel-root{color:white!} 
 /* Set box-sizing to border-box for all elements */
@@ -95,9 +94,7 @@ body {
 .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
  border-color:#fff!important; 
 }
-.css-1uvydh2 {
-  border:1px solid #fff!important; 
-}
+
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused,.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   color:white!important;
 }
