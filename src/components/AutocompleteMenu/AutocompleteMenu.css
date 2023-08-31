@@ -15,11 +15,14 @@
 label.Mui-focused {
   color:white;
 }
+.MuiOutlinedInput-root {
+  border-top-color: white;
+}
 .MuiOutlinedInput-root.Mui-focused fieldset {
       border-color: white;
     }
 .MuiOutlinedInput-root.Mui-focused {
-      border-color: white;
+      border-top-color: white;
     }
 .options-list {
   position: absolute;
