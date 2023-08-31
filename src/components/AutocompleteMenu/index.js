@@ -6,6 +6,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme) => ({
   alwaysFloatedLabel: {
     transform: 'translate(14px, 12px) scale(1)',
+    color:'white'
   },
 }));
 
