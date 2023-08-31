@@ -15,7 +15,7 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
     <div>
       <h2 className="slider-headline-labels">Sonic Descriptors</h2>
       <div className={`slider-container  ${displayed}`}>
-        {displayed==="constrained"?descriptors.filter(entry=>entry.category==="sonic").slice(0,5).map((descriptor, index) => (
+        {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>entry.category==="sonic").slice(0,5).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>
@@ -42,11 +42,11 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
             />
             <div className="slider-value">{descriptor.value}</div>
           </div>
-        ))}
+        )):''}
       </div>
             <h2 className="slider-headline-labels-three">Visual Descriptors</h2>
       <div className={`slider-container  ${displayed}`}>
-                {displayed==="constrained"?descriptors.filter(entry=>entry.category==="visual").slice(0,5).map((descriptor, index) => (
+                {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>entry.category==="visual").slice(0,5).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>
@@ -72,11 +72,11 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
             />
             <div className="slider-value">{descriptor.value}</div>
           </div>
-        ))}
+        )):''}
       </div>
       <h2 className="slider-headline-labels-two">Vibe Descriptors</h2>
       <div className={`slider-container  ${displayed}`}>
-                {displayed==="constrained"?descriptors.filter(entry=>entry.category==="vibe").slice(0,5).map((descriptor, index) => (
+                {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>entry.category==="vibe").slice(0,5).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>
@@ -102,7 +102,7 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
             />
             <div className="slider-value">{descriptor.value}</div>
           </div>
-        ))}
+        )):''}
       </div>
       </div>
   );

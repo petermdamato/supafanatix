@@ -19,10 +19,13 @@
 .brand-item:hover {
   background-color: #c0c0c0;
 }
-.brand-item {
-
+.brand-item-hidden {
+  opacity:0;
 }
-
+.leaderboard-inner ul{
+  height:320px;
+  overflow:hidden;
+}
 .leaderboard {
   margin-left:40px;
   min-width:200px;

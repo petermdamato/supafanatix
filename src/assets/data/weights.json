@@ -1,0 +1,362 @@
+{"data":[
+  {
+    "descriptor": "Hip hop music",
+    "weight": 0.5642857143
+  },
+  {
+    "descriptor": "Pop music",
+    "weight": 0.7285714286
+  },
+  {
+    "descriptor": "Rock",
+    "weight": 0.3571428571
+  },
+  {
+    "descriptor": "Country music",
+    "weight": 0.2857142857
+  },
+  {
+    "descriptor": "Indie rock",
+    "weight": 0.4142857143
+  },
+  {
+    "descriptor": "Jazz",
+    "weight": 0.3
+  },
+  {
+    "descriptor": "Punk rock",
+    "weight": 0.2785714286
+  },
+  {
+    "descriptor": "Heavy metal",
+    "weight": 0.1857142857
+  },
+  {
+    "descriptor": "Alternative rock",
+    "weight": 0.4071428571
+  },
+  {
+    "descriptor": "R&B",
+    "weight": 0.5428571429
+  },
+  {
+    "descriptor": "Blues",
+    "weight": 0.3142857143
+  },
+  {
+    "descriptor": "Trap music",
+    "weight": 0.5857142857
+  },
+  {
+    "descriptor": "Techno",
+    "weight": 0.3142857143
+  },
+  {
+    "descriptor": "EDM",
+    "weight": 0.4071428571
+  },
+  {
+    "descriptor": "Reggae",
+    "weight": 0.3714285714
+  },
+  {
+    "descriptor": "Emo",
+    "weight": 0.3428571429
+  },
+  {
+    "descriptor": "Dubstep",
+    "weight": 0.2285714286
+  },
+  {
+    "descriptor": "Pop rap",
+    "weight": 0.55
+  },
+  {
+    "descriptor": "Classic rock",
+    "weight": 0.3428571429
+  },
+  {
+    "descriptor": "Vaporwave",
+    "weight": 0.2857142857
+  },
+  {
+    "descriptor": "Electronic music",
+    "weight": 0.4571428571
+  },
+  {
+    "descriptor": "Pop rock",
+    "weight": 0.55
+  },
+  {
+    "descriptor": "Hard rock",
+    "weight": 0.2714285714
+  },
+  {
+    "descriptor": "Hyperpop",
+    "weight": 0.4571428571
+  },
+  {
+    "descriptor": "danceable",
+    "weight": 0.7142857143
+  },
+  {
+    "descriptor": "lively",
+    "weight": 0.6642857143
+  },
+  {
+    "descriptor": "valence",
+    "weight": 0.6428571429
+  },
+  {
+    "descriptor": "energetic",
+    "weight": 0.7214285714
+  },
+  {
+    "descriptor": "high tempo",
+    "weight": 0.6
+  },
+  {
+    "descriptor": "speechiness",
+    "weight": 0.5785714286
+  },
+  {
+    "descriptor": "instrumentalness",
+    "weight": 0.3071428571
+  },
+  {
+    "descriptor": "acoustic",
+    "weight": 0.3857142857
+  },
+  {
+    "descriptor": "mode",
+    "weight": 0.5714285714
+  },
+  {
+    "descriptor": "extended duration",
+    "weight": 0.4714285714
+  },
+  {
+    "descriptor": "lyricism",
+    "weight": 0.6285714286
+  },
+  {
+    "descriptor": "instrumentation",
+    "weight": 0.5285714286
+  },
+  {
+    "descriptor": "vocalism",
+    "weight": 0.6571428571
+  },
+  {
+    "descriptor": "complex arrangement",
+    "weight": 0.5571428571
+  },
+  {
+    "descriptor": "street/urban",
+    "weight": 0.5857142857
+  },
+  {
+    "descriptor": "art deco",
+    "weight": 0.2714285714
+  },
+  {
+    "descriptor": "avant-garde",
+    "weight": 0.2857142857
+  },
+  {
+    "descriptor": "digital",
+    "weight": 0.5
+  },
+  {
+    "descriptor": "surrealism",
+    "weight": 0.4142857143
+  },
+  {
+    "descriptor": "industrial",
+    "weight": 0.2571428571
+  },
+  {
+    "descriptor": "realism",
+    "weight": 0.4571428571
+  },
+  {
+    "descriptor": "modern",
+    "weight": 0.5714285714
+  },
+  {
+    "descriptor": "emphasis on crisp edges",
+    "weight": 0.4714285714
+  },
+  {
+    "descriptor": "high contrast design",
+    "weight": 0.5142857143
+  },
+  {
+    "descriptor": "cool overtones",
+    "weight": 0.6142857143
+  },
+  {
+    "descriptor": "warm overtones",
+    "weight": 0.5857142857
+  },
+  {
+    "descriptor": "soft pastel hues",
+    "weight": 0.3857142857
+  },
+  {
+    "descriptor": "bold typography",
+    "weight": 0.6285714286
+  },
+  {
+    "descriptor": "subtle gradients",
+    "weight": 0.4857142857
+  },
+  {
+    "descriptor": "monochromatic design",
+    "weight": 0.5285714286
+  },
+  {
+    "descriptor": "symmetrical design",
+    "weight": 0.5285714286
+  },
+  {
+    "descriptor": "minimalist design",
+    "weight": 0.5571428571
+  },
+  {
+    "descriptor": "earth tones",
+    "weight": 0.4285714286
+  },
+  {
+    "descriptor": "patterned",
+    "weight": 0.4428571429
+  },
+  {
+    "descriptor": "confident",
+    "weight": 0.7071428571
+  },
+  {
+    "descriptor": "warm",
+    "weight": 0.6071428571
+  },
+  {
+    "descriptor": "human",
+    "weight": 0.7
+  },
+  {
+    "descriptor": "soulful",
+    "weight": 0.6571428571
+  },
+  {
+    "descriptor": "energetic vibe",
+    "weight": 0.7214285714
+  },
+  {
+    "descriptor": "ethereal",
+    "weight": 0.4571428571
+  },
+  {
+    "descriptor": "nostalgic",
+    "weight": 0.4571428571
+  },
+  {
+    "descriptor": "introspective",
+    "weight": 0.5428571429
+  },
+  {
+    "descriptor": "passionate",
+    "weight": 0.6785714286
+  },
+  {
+    "descriptor": "serene",
+    "weight": 0.5142857143
+  },
+  {
+    "descriptor": "playful",
+    "weight": 0.65
+  },
+  {
+    "descriptor": "raw",
+    "weight": 0.4714285714
+  },
+  {
+    "descriptor": "bold",
+    "weight": 0.6285714286
+  },
+  {
+    "descriptor": "timeless",
+    "weight": 0.5571428571
+  },
+  {
+    "descriptor": "captivating",
+    "weight": 0.6571428571
+  },
+  {
+    "descriptor": "dreamy",
+    "weight": 0.5285714286
+  },
+  {
+    "descriptor": "empathetic",
+    "weight": 0.6571428571
+  },
+  {
+    "descriptor": "powerful",
+    "weight": 0.6642857143
+  },
+  {
+    "descriptor": "enigmatic",
+    "weight": 0.4428571429
+  },
+  {
+    "descriptor": "harmonious",
+    "weight": 0.6
+  },
+  {
+    "descriptor": "eclectic",
+    "weight": 0.5142857143
+  },
+  {
+    "descriptor": "hopeful",
+    "weight": 0.65
+  },
+  {
+    "descriptor": "empowering",
+    "weight": 0.6785714286
+  },
+  {
+    "descriptor": "bittersweet",
+    "weight": 0.5
+  },
+  {
+    "descriptor": "magnetic",
+    "weight": 0.6142857143
+  },
+  {
+    "descriptor": "whimsical",
+    "weight": 0.5714285714
+  },
+  {
+    "descriptor": "intimate",
+    "weight": 0.6285714286
+  },
+  {
+    "descriptor": "electric",
+    "weight": 0.5642857143
+  },
+  {
+    "descriptor": "heartfelt",
+    "weight": 0.6571428571
+  },
+  {
+    "descriptor": "reflective",
+    "weight": 0.6
+  },
+  {
+    "descriptor": "triumphant",
+    "weight": 0.65
+  },
+  {
+    "descriptor": "soothing",
+    "weight": 0.5
+  }
+]}

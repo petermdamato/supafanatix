@@ -7,14 +7,15 @@ const RowChart = ({ data,setWidth,name }) => {
   useEffect(() => {
     if (!data || data.length === 0) return;
 
-    const margin = { top: 30, right: 20, bottom: 4, left: 136 };
+    const margin = { top: 30, right: 10, bottom: 4, left: 146 };
     const width = setWidth - margin.left - margin.right;
     const height = data.length * 20 - margin.top - margin.bottom;
     
     data = data.sort((a,b)=>{
       return b.value-a.value
     }).slice(0,10)
-
+    
+    d3.select(chartRef.current).select("svg").remove();
     const svg = d3
       .select(chartRef.current)
       .append('svg')
@@ -86,11 +87,16 @@ const RowChart = ({ data,setWidth,name }) => {
       .style('font-family', 'Signika')
       .style('text-transform', 'uppercase')
       .style('fill', 'white')
-      .text(d => d.brand);
+      .text(d => {
+        if (d.brand === "mercedes_benz"||d.brand === "coca_cola"){
+                return d.brand.replace('_','-')}else{
+        return d.brand.replace('_',' ')
+      }
+      });
 
   }, [data]);
 
-  return <div ref={chartRef}></div>;
+  return <div ref={chartRef} className="row-chart"></div>;
 };
 
 export default RowChart;

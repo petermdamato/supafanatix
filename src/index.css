@@ -9,7 +9,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0;
   padding: 0;
 }
-
+.css-p0rm37 {
+  color:white!important;
+}
+.MuiFormLabel-root{color:white!} 
 /* Set box-sizing to border-box for all elements */
 * {
   box-sizing: border-box;
@@ -22,7 +25,9 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
-
+.autocomplete-container {
+  max-height:160px;
+}
 /* Define styles for the app header */
 .app-header {
   background-color: #333;
@@ -81,7 +86,9 @@ body {
 .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
  border-color:#fff!important; 
 }
-
+.css-1uvydh2 {
+  border:1px solid #fff!important; 
+}
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused,.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   color:white!important;
 }

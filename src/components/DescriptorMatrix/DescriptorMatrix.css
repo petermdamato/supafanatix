@@ -23,5 +23,8 @@
 	font-family:Raleway;
 	opacity:0.8;
 	max-width:74%;
-	margin-bottom:14px;
+	margin-bottom:34px;
+}
+.slider-wrapper {
+	min-width:80px;
 }

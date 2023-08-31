@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './DropdownHeadline.css'
 
-const DropdownHeadline = ({ options,artist }) => {
+const DropdownHeadline = ({ options,artist,setBrand }) => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const handleOptionChange = event => {
     setSelectedOption(event.target.value);
+    setBrand(event.target.value)
   };
 
   return (

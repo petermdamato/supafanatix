@@ -3,6 +3,8 @@ import './BrandMatch.css'
 import RowChart from './../RowChart'
 import CircleChart from './../CircleChart'
 import DropdownHeadline from './../DropdownHeadline'
+import {findDistinctions} from './../../utils/similarityScore';
+import cloneDeep from 'lodash/cloneDeep';
 let brands = []
 const data = [[
   { "brand": "Nike", "value": 8 },
@@ -44,29 +46,53 @@ const data = [[
     { "key": "artist", "value": 4.2 }]}
 ]]
 
-const BrandMatch = ({artist}) => {
-  data[0].forEach(entry=>(!brands.includes(entry.brand)?brands.push(entry.brand):console.log('Good')))
+const BrandMatch = ({artist,brandRankings,brandData,incomingData}) => {
+    let brandsOptions = brandRankings.map(entry=>entry.brand)
+  brandsOptions = brandsOptions.sort()
+  const [brand, setBrand] = useState(brandsOptions[0])
+  const [sonicDiffs,setSonicDiffs] = useState([null, null, null])
+  const [visualDiffs,setVisualDiffs] = useState([null, null, null])
+
+
+  useEffect(()=>{
+    setSonicDiffs(findDistinctions(incomingData,brand,brandData[brand],"visual"))
+    setVisualDiffs(findDistinctions(incomingData,brand,brandData[brand],"sonic"))
+  },[brand,artist])
+
+  let sonicRankings = cloneDeep(brandRankings)
+  sonicRankings = sonicRankings.sort((a,b)=>{return b.sonic_rank-a.sonic_rank}).map(entry=>{
+    entry.value = entry.sonic_rank * -1
+    return entry
+  })
+  let visualRankings = cloneDeep(brandRankings)
+
+  visualRankings = visualRankings.sort((a,b)=>{return b.visual_rank-a.visual_rank}).map(entry=>{
+    entry.value = entry.visual_rank * -1
+    return entry
+  })
+
+  data[0].forEach(entry=>(!brands.includes(entry.brand)?brands.push(entry.brand):''))
 
   return (
     <div className="brandmatch-container flex-col flex">
     <h2 className="brandmatch-headline text-xl font-semibold mb-4">COMPARISON TO POPULAR BRANDS</h2>
       <div className="brandmatch-container-inner flex">
         <div className="row-chart-container py-6 pr-12 rounded-lg shadow-md">
-          <RowChart name="Visually Similar" setWidth={300} data={data[0]}/>
+          <RowChart name="Visually Similar" setWidth={300} data={sonicRankings}/>
         </div>
         <div className="w-10">
         </div>
               <div className="row-chart-container py-6 pr-12 rounded-lg shadow-md">
-          <RowChart name="Sonically Similar" height="" setWidth={300} data={data[1]}/>
+          <RowChart name="Sonically Similar" height="" setWidth={300} data={visualRankings}/>
         </div>
         </div>
-      <DropdownHeadline options={brands} artist={artist} />
+      <DropdownHeadline options={brandsOptions} setBrand={setBrand} artist={artist} />
       <div className="brandmatch-container-inner flex">
       <div className="brandmatch-container-inner flex">
-        <CircleChart name="Top Visual Differences" setWidth={260} data={data[2]}/>
+        <CircleChart name="Top Visual Differences" setWidth={260} data={visualDiffs}/>
       </div>
       <div className="brandmatch-container-inner flex">
-        <CircleChart name="Top Sonic Differences" setWidth={260} data={data[3]}/>
+        <CircleChart name="Top Sonic Differences" setWidth={260} data={sonicDiffs}/>
       </div>
       </div>
     </div>

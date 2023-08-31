@@ -5,6 +5,7 @@ const CircleChart = ({ data,setWidth,name }) => {
   const svgRef = useRef();
 
   useEffect(() => {
+    if (data[0]) {
     const svg = d3.select(svgRef.current);
 
     const width = setWidth;
@@ -12,7 +13,10 @@ const CircleChart = ({ data,setWidth,name }) => {
     const circleRadius = 10;
     const lineY = height / 2;
     const margin = { top: 10, right: 20, bottom: 20, left: 160 };
-
+    
+    d3.select(svgRef.current).selectAll("g").remove();
+    d3.select(svgRef.current).selectAll("text").remove();
+    
     svg.attr('width', width + margin.left + margin.right);
     svg.attr('height', height + margin.top + margin.bottom);
 
@@ -32,62 +36,55 @@ const CircleChart = ({ data,setWidth,name }) => {
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top*-1})`);
 
-    data.forEach((row, rowIndex) => {
       const xScale = d3.scaleLinear()
-        .domain([0, 10])
+        .domain([0, 100])
         .range([0, width]);
 
-      const circleGroup = g
-        .append('g')
-        .attr('transform', `translate(0, ${rowIndex * 50})`);
+      data.forEach((row, rowIndex) => {
 
-      circleGroup
-        .append('text')
-        .attr('x', -10)
-        .attr('y', lineY + circleRadius - 7)
-        .attr('text-anchor', 'end')
-        .style('fill', 'white')
-        .style('text-transform', 'uppercase')
-        .style('font-size', 10)
-        .text(row.label);
-
-      circleGroup
-        .append('rect')
-        .attr('x', 0)
-        .attr('height', 1)
-        .attr('y', lineY)
-        .attr('width', ()=>{
-          return d3.max(row.data,(entry)=>{
-            return xScale(entry.value)
-          })
-        })
-        .style('fill', 'white')
-        .style('opacity', 0.2)
-        
-
-      row.data.forEach(({ key, value }) => {
+        const circleGroup = g
+          .append('g')
+          .attr('transform', `translate(0, ${rowIndex * 50})`);
         circleGroup
-          .append('circle')
-          .attr('cx', xScale(value))
-          .attr('cy', lineY)
-          .attr('r', circleRadius)
-          .style('fill', ()=>{
-            if (key === 'artist') {
-              return '#C54577'
-            } else {
-              return '#63846E'
-            }
-          });
+          .append('text')
+          .attr('x', -10)
+          .attr('y', lineY + circleRadius - 7)
+          .attr('text-anchor', 'end')
+          .style('fill', 'white')
+          .style('text-transform', 'uppercase')
+          .style('font-size', 10)
+          .text(row.descriptor);
 
-        // circleGroup
-        //   .append('text')
-        //   .attr('x', xScale(value))
-        //   .attr('y', lineY + circleRadius + 10)
-        //   .attr('text-anchor', 'middle')
-        //   .style('fill', 'white')
-        //   .text(key);
-      });
-    });
+        circleGroup
+          .append('rect')
+          .attr('x', 0)
+          .attr('height', 1)
+          .attr('y', lineY)
+          .attr('width', ()=>{
+            return d3.max([xScale(row.brandVal),xScale(row.artistVal)])
+          })
+          .style('fill', 'white')
+          .style('opacity', 0.2)
+        circleGroup
+            .append('circle')
+            .attr('cx', xScale(row.artistVal))
+            .attr('cy', lineY)
+            .attr('r', circleRadius)
+            .style('fill', '#C54577');
+        circleGroup
+            .append('circle')
+            .attr('cx', xScale(row.brandVal))
+            .attr('cy', lineY)
+            .attr('r', circleRadius)
+            .style('fill', '#63846E');
+      })
+
+
+
+    }
+
+
+
   }, [data]);
 
   return <svg ref={svgRef}></svg>;
