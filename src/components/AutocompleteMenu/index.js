@@ -41,13 +41,11 @@ const AutocompleteMenu = ({ options, onOptionSelect,artist }) => {
       onFocus={handleInputFocus}
       onBlur={handleInputBlur}
       options={options}
-      inputProps={{ style: { borderColor: 'white' } }}
       value={artist&&artist.length > 0 ? artist : null}
       renderInput={(params) => (
         selected || artist && artist.length>0 ? <TextField {...params} 
             label="Artist" 
             variant="outlined" 
-            inputProps={{ style: { borderColor: 'white' } }}
             InputLabelProps={{
             classes: {
               root: classes.alwaysFloatedLabel,

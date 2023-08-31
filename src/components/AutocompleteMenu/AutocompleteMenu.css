@@ -12,7 +12,15 @@
 .open .options-list {
   display: block;
 }
-
+label.Mui-focused {
+  color:white;
+}
+.MuiOutlinedInput-root.Mui-focused fieldset {
+      border-color: white;
+    }
+.MuiOutlinedInput-root.Mui-focused {
+      border-color: white;
+    }
 .options-list {
   position: absolute;
   width: 100%;
