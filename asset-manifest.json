@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/supafanatix/static/css/main.b95f7052.css",
-    "main.js": "/supafanatix/static/js/main.fec8c987.js",
+    "main.css": "/supafanatix/static/css/main.1268be43.css",
+    "main.js": "/supafanatix/static/js/main.8e164a03.js",
     "static/js/330.25176017.chunk.js": "/supafanatix/static/js/330.25176017.chunk.js",
     "static/js/756.f89a0a93.chunk.js": "/supafanatix/static/js/756.f89a0a93.chunk.js",
     "static/js/602.e9fc3a8c.chunk.js": "/supafanatix/static/js/602.e9fc3a8c.chunk.js",
@@ -69,11 +69,11 @@
     "static/media/samsung_2.jpg": "/supafanatix/static/media/samsung_2.680fb0e700aaa0921534.jpg",
     "static/media/samsung_3.jpg": "/supafanatix/static/media/samsung_3.f51854b1e7549aa82c02.jpg",
     "index.html": "/supafanatix/index.html",
-    "main.b95f7052.css.map": "/supafanatix/static/css/main.b95f7052.css.map",
-    "main.fec8c987.js.map": "/supafanatix/static/js/main.fec8c987.js.map"
+    "main.1268be43.css.map": "/supafanatix/static/css/main.1268be43.css.map",
+    "main.8e164a03.js.map": "/supafanatix/static/js/main.8e164a03.js.map"
   },
   "entrypoints": [
-    "static/css/main.b95f7052.css",
-    "static/js/main.fec8c987.js"
+    "static/css/main.1268be43.css",
+    "static/js/main.8e164a03.js"
   ]
 }
