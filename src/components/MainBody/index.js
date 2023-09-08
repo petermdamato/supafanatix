@@ -10,7 +10,7 @@ import ImageMatch from './../ImageMatch';
 import { calculateWeightedSimilarityScore,findClosestDescriptor,findDistinctions } from './../../utils/similarityScore';
 import cloneDeep from 'lodash/cloneDeep';
 import './MainBody.css'
-
+let categories = [['Hip hop music', 'Pop music', 'Rock', 'Country music', 'Indie rock', 'Jazz', 'Punk rock', 'Heavy metal', 'Alternative rock', 'R&B', 'Blues', 'Trap music', 'Techno', 'EDM', 'Reggae', 'Emo', 'Dubstep', 'Pop rap', 'Classic rock', 'Vaporwave', 'Electronic music', 'Pop rock', 'Hard rock', 'Hyperpop', 'danceable', 'lively', 'valence', 'energetic', 'high tempo', 'speechiness', 'instrumentalness', 'acoustic', 'mode', 'extended duration', 'lyricism', 'instrumentation', 'vocalism', 'complex arrangement'], ['street/urban', 'art deco', 'avant-garde', 'digital', 'surrealism', 'industrial', 'realism', 'modern', 'emphasis on crisp edges', 'high contrast design', 'cool overtones', 'warm overtones', 'soft pastel hues', 'bold typography', 'subtle gradients', 'monochromatic design', 'symmetrical design', 'minimalist design', 'earth tones', 'patterned'], ['confident', 'warm', 'human', 'soulful', 'energetic vibe', 'ethereal', 'nostalgic', 'introspective', 'passionate', 'serene', 'playful', 'raw', 'bold', 'timeless', 'captivating', 'dreamy', 'empathetic', 'powerful', 'enigmatic', 'harmonious', 'eclectic', 'hopeful', 'empowering', 'bittersweet', 'magnetic', 'whimsical', 'intimate', 'electric', 'heartfelt', 'reflective', 'triumphant', 'soothing']]
 const MainBody = ({options,handleArtistChange,artist}) => {
   const [selectedArtist, setSelectedArtist] = useState(null);
   const [labels, setLabels] = useState([[null,null,null],[null,null,null],[null,null,null]])
@@ -22,7 +22,6 @@ const MainBody = ({options,handleArtistChange,artist}) => {
   const [visualSimilarities, setVisualSimilarities] = useState([null, null, null])
   const [displayed, setDisplayed] = useState("constrained");
   const [page, setPage] = useState('Overview')
-
   const imageUrl = `../../assets/logo.png`
   const navigation = ["Overview", "Brand Match", "Descriptor Matrix", "Visual Glossary", "Image Match"]
 
@@ -33,20 +32,24 @@ const MainBody = ({options,handleArtistChange,artist}) => {
     setPage(entry) 
   }
 
+  categories = [categories[0].map(entry=>entry.toLowerCase()),categories[1].map(entry=>entry.toLowerCase()),categories[2].map(entry=>entry.toLowerCase())]
+
   useEffect(() => {
     async function fetchData() {
       try {
         let innerData;
          await import(`../../assets/data/${artist.toLowerCase().split(" ").join("_")}.json`)
             .then((res) => {
+
               innerData = res.data
               setData(res.data)
               const dat = res.data.sort((a,b)=>{
                 return b.value - a.value
               })
-              let sonic = res.data.filter(entry=>entry.category==="sonic")
-              let visual = res.data.filter(entry=>entry.category==="visual")
-              let vibe = res.data.filter(entry=>entry.category==="vibe")
+
+              let sonic = res.data.filter(entry=>categories[0].includes(entry.descriptor.toLowerCase()))
+              let visual = res.data.filter(entry=>categories[1].includes(entry.descriptor.toLowerCase()))
+              let vibe = res.data.filter(entry=>categories[2].includes(entry.descriptor.toLowerCase()))
 
               sonic = sonic.map((entry)=>entry.descriptor)
               visual = visual.map(entry=>entry.descriptor)
@@ -80,12 +83,12 @@ const MainBody = ({options,handleArtistChange,artist}) => {
                           return b.sonic_rank - a.sonic_rank
                         })[0].brand],bdata[cloneDeep(brands).sort((a,b)=>{
                           return b.sonic_rank - a.sonic_rank
-                        })[1].brand],innerData.filter(entry=>entry.category==="sonic"&&entry.descriptor[0]===entry.descriptor[0].toLowerCase())))
+                        })[1].brand],innerData.filter(entry=>categories[0].includes(entry.descriptor.toLowerCase())&&entry.descriptor[0]===entry.descriptor[0].toLowerCase())))
                 setVisualSimilarities(findClosestDescriptor(bdata[cloneDeep(brands).sort((a,b)=>{
                           return b.visual_rank - a.visual_rank
                         })[0].brand],bdata[cloneDeep(brands).sort((a,b)=>{
                           return b.visual_rank - a.visual_rank
-                        })[1].brand],innerData.filter(entry=>entry.category==="visual")))
+                        })[1].brand],innerData.filter(entry=>categories[1].includes(entry.descriptor.toLowerCase()))))
 
                 })
 
@@ -104,7 +107,7 @@ const MainBody = ({options,handleArtistChange,artist}) => {
   return (
     <div className="h-full app-mainpage-inner">
       <div className="h-screen fill-screen">
-        <div className="flex h-1/6 fill-screen-inner border-bottom">
+        <div className="flex fill-screen-inner border-bottom">
           <div className="w-1/5 flex flex-col">
             <div className="image-container"><img src={logo} alt="Supafanatix Logo" /></div>
           </div>
@@ -139,7 +142,7 @@ const MainBody = ({options,handleArtistChange,artist}) => {
                 {artist}
                 </div>
               </div>
-              {page === "Overview" ? <Overview artist={artist} differentiators={differentiators} brandRankings={brandRankings} visualSimilarities={visualSimilarities} sonicSimilarities={sonicSimilarities} brandData={brandData} data={data} labels={labels} /> : page === "Brand Match" ? <BrandMatch artist={artist} brandRankings={brandRankings} incomingData={data} brandData={brandData}/>:page === "Descriptor Matrix"?<DescriptorMatrix page={page} displayed={displayed} setDisplayed={setDisplayed} artist={artist}/>:page === "Visual Glossary"?<VisualGlossary artist={artist}/>:<ImageMatch artist={artist}/>}
+              {page === "Overview" ? <Overview artist={artist} differentiators={differentiators} brandRankings={brandRankings} visualSimilarities={visualSimilarities} sonicSimilarities={sonicSimilarities} brandData={brandData} data={data} labels={labels} /> : page === "Brand Match" ? <BrandMatch categories={categories} artist={artist} brandRankings={brandRankings} incomingData={data} brandData={brandData}/>:page === "Descriptor Matrix"?<DescriptorMatrix categories={categories} page={page} displayed={displayed} setDisplayed={setDisplayed} artist={artist}/>:page === "Visual Glossary"?<VisualGlossary categories={categories} artist={artist}/>:<ImageMatch artist={artist}/>}
             </div>
           </div>
           </div>

@@ -46,7 +46,7 @@ const data = [[
     { "key": "artist", "value": 4.2 }]}
 ]]
 
-const BrandMatch = ({artist,brandRankings,brandData,incomingData}) => {
+const BrandMatch = ({artist,brandRankings,categories,brandData,incomingData}) => {
     let brandsOptions = brandRankings.map(entry=>entry.brand)
   brandsOptions = brandsOptions.sort()
   const [brand, setBrand] = useState(brandsOptions[0])
@@ -55,19 +55,19 @@ const BrandMatch = ({artist,brandRankings,brandData,incomingData}) => {
 
 
   useEffect(()=>{
-    setSonicDiffs(findDistinctions(incomingData,brand,brandData[brand],"visual"))
-    setVisualDiffs(findDistinctions(incomingData,brand,brandData[brand],"sonic"))
+    setSonicDiffs(findDistinctions(incomingData,brand,brandData[brand],"sonic"))
+    setVisualDiffs(findDistinctions(incomingData,brand,brandData[brand],"visual"))
   },[brand,artist])
 
   let sonicRankings = cloneDeep(brandRankings)
   sonicRankings = sonicRankings.sort((a,b)=>{return b.sonic_rank-a.sonic_rank}).map(entry=>{
-    entry.value = entry.sonic_rank * -1
+    entry.value = entry.sonic_rank
     return entry
   })
   let visualRankings = cloneDeep(brandRankings)
 
   visualRankings = visualRankings.sort((a,b)=>{return b.visual_rank-a.visual_rank}).map(entry=>{
-    entry.value = entry.visual_rank * -1
+    entry.value = entry.visual_rank
     return entry
   })
 
@@ -78,21 +78,21 @@ const BrandMatch = ({artist,brandRankings,brandData,incomingData}) => {
     <h2 className="brandmatch-headline text-xl font-semibold mb-4">COMPARISON TO POPULAR BRANDS</h2>
       <div className="brandmatch-container-inner flex">
         <div className="row-chart-container py-6 pr-12 rounded-lg shadow-md">
-          <RowChart name="Visually Similar" setWidth={300} data={sonicRankings}/>
+          <RowChart name="Sonically Similar" setWidth={300} data={sonicRankings}/>
         </div>
         <div className="w-10">
         </div>
               <div className="row-chart-container py-6 pr-12 rounded-lg shadow-md">
-          <RowChart name="Sonically Similar" height="" setWidth={300} data={visualRankings}/>
+          <RowChart name="Visually Similar" height="" setWidth={300} data={visualRankings}/>
         </div>
         </div>
       <DropdownHeadline options={brandsOptions} setBrand={setBrand} artist={artist} />
       <div className="brandmatch-container-inner flex">
       <div className="brandmatch-container-inner flex">
-        <CircleChart name="Top Visual Differences" setWidth={260} data={visualDiffs}/>
+        <CircleChart name="Top Sonic Differences" setWidth={260} data={sonicDiffs}/>
       </div>
       <div className="brandmatch-container-inner flex">
-        <CircleChart name="Top Sonic Differences" setWidth={260} data={sonicDiffs}/>
+        <CircleChart name="Top Visual Differences" setWidth={260} data={visualDiffs}/>
       </div>
       </div>
     </div>

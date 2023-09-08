@@ -1,0 +1,364 @@
+{
+    "data": [
+        {
+            "descriptor": "Hip hop music",
+            "value": 12
+        },
+        {
+            "descriptor": "Pop music",
+            "value": 23
+        },
+        {
+            "descriptor": "Rock",
+            "value": 91
+        },
+        {
+            "descriptor": "Country music",
+            "value": 8
+        },
+        {
+            "descriptor": "Indie rock",
+            "value": 34
+        },
+        {
+            "descriptor": "Jazz",
+            "value": 6
+        },
+        {
+            "descriptor": "Punk rock",
+            "value": 72
+        },
+        {
+            "descriptor": "Heavy metal",
+            "value": 64
+        },
+        {
+            "descriptor": "Alternative rock",
+            "value": 82
+        },
+        {
+            "descriptor": "R&B",
+            "value": 6
+        },
+        {
+            "descriptor": "Blues",
+            "value": 12
+        },
+        {
+            "descriptor": "Trap music",
+            "value": 12
+        },
+        {
+            "descriptor": "Techno",
+            "value": 9
+        },
+        {
+            "descriptor": "EDM",
+            "value": 9
+        },
+        {
+            "descriptor": "Reggae",
+            "value": 6
+        },
+        {
+            "descriptor": "Emo",
+            "value": 84
+        },
+        {
+            "descriptor": "Dubstep",
+            "value": 14
+        },
+        {
+            "descriptor": "Pop rap",
+            "value": 12
+        },
+        {
+            "descriptor": "Classic rock",
+            "value": 61
+        },
+        {
+            "descriptor": "Vaporwave",
+            "value": 6
+        },
+        {
+            "descriptor": "Electronic music",
+            "value": 22
+        },
+        {
+            "descriptor": "Pop rock",
+            "value": 53
+        },
+        {
+            "descriptor": "Hard rock",
+            "value": 72
+        },
+        {
+            "descriptor": "Hyperpop",
+            "value": 13
+        },
+        {
+            "descriptor": "danceable",
+            "value": 52
+        },
+        {
+            "descriptor": "lively",
+            "value": 61
+        },
+        {
+            "descriptor": "valence",
+            "value": 63
+        },
+        {
+            "descriptor": "energetic",
+            "value": 82
+        },
+        {
+            "descriptor": "high tempo",
+            "value": 74
+        },
+        {
+            "descriptor": "speechiness",
+            "value": 13
+        },
+        {
+            "descriptor": "instrumentalness",
+            "value": 21
+        },
+        {
+            "descriptor": "acoustic",
+            "value": 9
+        },
+        {
+            "descriptor": "mode",
+            "value": 74
+        },
+        {
+            "descriptor": "extended duration",
+            "value": 11
+        },
+        {
+            "descriptor": "lyricism",
+            "value": 43
+        },
+        {
+            "descriptor": "instrumentation",
+            "value": 73
+        },
+        {
+            "descriptor": "vocalism",
+            "value": 71
+        },
+        {
+            "descriptor": "complex arrangement",
+            "value": 63
+        },
+        {
+            "descriptor": "street/urban",
+            "value": 11
+        },
+        {
+            "descriptor": "art deco",
+            "value": 7
+        },
+        {
+            "descriptor": "avant-garde",
+            "value": 7
+        },
+        {
+            "descriptor": "digital",
+            "value": 61
+        },
+        {
+            "descriptor": "surrealism",
+            "value": 23
+        },
+        {
+            "descriptor": "industrial",
+            "value": 34
+        },
+        {
+            "descriptor": "realism",
+            "value": 24
+        },
+        {
+            "descriptor": "modern",
+            "value": 62
+        },
+        {
+            "descriptor": "emphasis on crisp edges",
+            "value": 52
+        },
+        {
+            "descriptor": "high contrast design",
+            "value": 53
+        },
+        {
+            "descriptor": "cool overtones",
+            "value": 72
+        },
+        {
+            "descriptor": "warm overtones",
+            "value": 53
+        },
+        {
+            "descriptor": "soft pastel hues",
+            "value": 9
+        },
+        {
+            "descriptor": "bold typography",
+            "value": 43
+        },
+        {
+            "descriptor": "subtle gradients",
+            "value": 24
+        },
+        {
+            "descriptor": "monochromatic design",
+            "value": 21
+        },
+        {
+            "descriptor": "symmetrical design",
+            "value": 42
+        },
+        {
+            "descriptor": "minimalist design",
+            "value": 21
+        },
+        {
+            "descriptor": "earth tones",
+            "value": 9
+        },
+        {
+            "descriptor": "patterned",
+            "value": 22
+        },
+        {
+            "descriptor": "confident",
+            "value": 71
+        },
+        {
+            "descriptor": "warm",
+            "value": 54
+        },
+        {
+            "descriptor": "human",
+            "value": 63
+        },
+        {
+            "descriptor": "soulful",
+            "value": 12
+        },
+        {
+            "descriptor": "energetic vibe",
+            "value": 94
+        },
+        {
+            "descriptor": "ethereal",
+            "value": 24
+        },
+        {
+            "descriptor": "nostalgic",
+            "value": 42
+        },
+        {
+            "descriptor": "introspective",
+            "value": 31
+        },
+        {
+            "descriptor": "passionate",
+            "value": 73
+        },
+        {
+            "descriptor": "serene",
+            "value": 14
+        },
+        {
+            "descriptor": "playful",
+            "value": 44
+        },
+        {
+            "descriptor": "raw",
+            "value": 81
+        },
+        {
+            "descriptor": "bold",
+            "value": 63
+        },
+        {
+            "descriptor": "timeless",
+            "value": 42
+        },
+        {
+            "descriptor": "captivating",
+            "value": 63
+        },
+        {
+            "descriptor": "dreamy",
+            "value": 22
+        },
+        {
+            "descriptor": "empathetic",
+            "value": 42
+        },
+        {
+            "descriptor": "powerful",
+            "value": 72
+        },
+        {
+            "descriptor": "enigmatic",
+            "value": 41
+        },
+        {
+            "descriptor": "harmonious",
+            "value": 72
+        },
+        {
+            "descriptor": "eclectic",
+            "value": 43
+        },
+        {
+            "descriptor": "hopeful",
+            "value": 74
+        },
+        {
+            "descriptor": "empowering",
+            "value": 63
+        },
+        {
+            "descriptor": "bittersweet",
+            "value": 43
+        },
+        {
+            "descriptor": "magnetic",
+            "value": 71
+        },
+        {
+            "descriptor": "whimsical",
+            "value": 11
+        },
+        {
+            "descriptor": "intimate",
+            "value": 42
+        },
+        {
+            "descriptor": "electric",
+            "value": 61
+        },
+        {
+            "descriptor": "heartfelt",
+            "value": 54
+        },
+        {
+            "descriptor": "reflective",
+            "value": 61
+        },
+        {
+            "descriptor": "triumphant",
+            "value": 72
+        },
+        {
+            "descriptor": "soothing",
+            "value": 14
+        }
+    ]
+}

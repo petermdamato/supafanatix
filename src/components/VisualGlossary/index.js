@@ -5,7 +5,7 @@ const data = [
     { descriptor: 'danceable', value: 75,index:75 },
     { descriptor: 'bold typography', value: 80,index:80 }
   ]
-const VisualGlossary = ({artist}) => {
+const VisualGlossary = ({artist,categories}) => {
   const [passedData,setPassedData] = useState(data)
 
   import(`../../assets/data/${artist.toLowerCase().split(" ").join("_")}.json`)
@@ -16,7 +16,7 @@ const VisualGlossary = ({artist}) => {
   return (
     <div className="glossary-container flex-col flex">
     <h2 className="glossary-headline text-xl font-semibold mb-4">Visual Glossary</h2>
-      <VisualGlossaryChart data={passedData} artist={artist}/>
+      <VisualGlossaryChart data={passedData} artist={artist} categories={categories}/>
     </div>
   );
 };

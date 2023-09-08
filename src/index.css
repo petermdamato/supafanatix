@@ -28,6 +28,15 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 .app-artist {
   color:white!important;
 }
+.coming-soon {
+  color:white;
+  font-family:Signika;
+}
+.coming-soon-container {
+  padding-top: 80px;
+  display:flex;
+  justify-content: space-around;
+}
 /* Set a default font family and font size for the app */
 body {
   font-family: Arial, sans-serif;

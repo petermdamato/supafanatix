@@ -3,7 +3,7 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css'; // Import the default styles
 import './Sliders.css';
 
-function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
+function Sliders({displayed,setDisplayed,descriptors,setDescriptors,categories}) {
 
   const handleSliderChange = (index, newValue,category, descript) => {
     var updatedDescriptors = [...descriptors];
@@ -15,7 +15,7 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
     <div>
       <h2 className="slider-headline-labels">Sonic Descriptors</h2>
       <div className={`slider-container  ${displayed}`}>
-        {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>entry.category==="sonic").slice(0,5).map((descriptor, index) => (
+        {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>categories[0].includes(entry.descriptor)).slice(0,5).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>
@@ -29,7 +29,7 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
             />
             <div className="slider-value">{descriptor.value}</div>
           </div>
-        )):descriptors.filter(entry=>entry.category==="sonic").map((descriptor, index) => (
+        )):descriptors.filter(entry=>categories[0].includes(entry.descriptor)).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>
@@ -46,7 +46,7 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
       </div>
             <h2 className="slider-headline-labels-three">Visual Descriptors</h2>
       <div className={`slider-container  ${displayed}`}>
-                {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>entry.category==="visual").slice(0,5).map((descriptor, index) => (
+                {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>categories[1].includes(entry.descriptor)).slice(0,5).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>
@@ -59,7 +59,7 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
             />
             <div className="slider-value">{descriptor.value}</div>
           </div>
-        )):descriptors.filter(entry=>entry.category==="visual").map((descriptor, index) => (
+        )):descriptors.filter(entry=>categories[1].includes(entry.descriptor)).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>
@@ -76,7 +76,7 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
       </div>
       <h2 className="slider-headline-labels-two">Vibe Descriptors</h2>
       <div className={`slider-container  ${displayed}`}>
-                {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>entry.category==="vibe").slice(0,5).map((descriptor, index) => (
+                {descriptors?.length>0?displayed==="constrained"?descriptors.filter(entry=>categories[2].includes(entry.descriptor)).slice(0,5).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>
@@ -89,7 +89,7 @@ function Sliders({displayed,setDisplayed,descriptors,setDescriptors}) {
             />
             <div className="slider-value">{descriptor.value}</div>
           </div>
-        )):descriptors.filter(entry=>entry.category==="vibe").map((descriptor, index) => (
+        )):descriptors.filter(entry=>categories[2].includes(entry.descriptor)).map((descriptor, index) => (
           <div className="slider-wrapper" key={index}>
             <label>{descriptor.descriptor}</label>
             <div className="spacer"></div>

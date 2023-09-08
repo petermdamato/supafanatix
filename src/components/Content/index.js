@@ -9,7 +9,6 @@ const Content = ({ options }) => {
   const handleArtistChange = (val) => {
     setArtist(val);
   };
-
   return (
     <div>
      {artist.length>0 ? <div className="app-mainpage">

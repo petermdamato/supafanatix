@@ -23,7 +23,7 @@ const DropdownHeadline = ({ options,artist,setBrand }) => {
       >
         {options.map(option => (
           <option className="dropdown-headline-brand-option" key={option} value={option}>
-            {option}
+            {option.replaceAll("_"," ")}
           </option>
         ))}
       </select>

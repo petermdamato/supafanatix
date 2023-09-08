@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import weights from '../../assets/data/weights'
 
-const VisualGlossaryChart = ({ data,artist }) => {
-  data = data.filter(entry=>entry.category==="visual")
+const VisualGlossaryChart = ({ data,artist,categories }) => {
+  data = data.filter(entry=>categories[1].includes(entry.descriptor.toLowerCase()))
+
   const svgRef = useRef();
 
   useEffect(() => {
@@ -66,13 +67,15 @@ const VisualGlossaryChart = ({ data,artist }) => {
       .data(data)
       .enter()
       .append('circle')
+      .attr('class', (d)=>{
+        return d.descriptor.split(" ").join("_").split("/").join("-")})
       .attr('cx', d => xScale(d.value))
       .attr('cy', (d) => {
         let weight;
         if (weights["data"].find((entry)=>{
-                  return entry.descriptor===d.descriptor})) {
+                  return entry.descriptor.toLowerCase()===d.descriptor.toLowerCase()})) {
           weight = weights["data"].find((entry)=>{
-                  return entry.descriptor===d.descriptor}).weight
+                  return entry.descriptor.toLowerCase()===d.descriptor.toLowerCase()}).weight
         } else {
           weight = 0.2
         }
@@ -85,23 +88,28 @@ const VisualGlossaryChart = ({ data,artist }) => {
 
     // Handle mouseover event
     function handleMouseOver(d) {
-      const label = d3.select("."+d.target.__data__.descriptor.split(" ").join("_"));
+      svg.selectAll('circle').style('opacity', 0.65)
+      const label = d3.select("."+d.target.__data__.descriptor.split(" ").join("_").split("/").join("-"));
+      d3.select(d.target).style('opacity', 1)
       label.transition().duration(200).style('opacity', 1);
     }
 
     // Handle mouseout event
     function handleMouseOut(d) {
-      const label = d3.select("."+d.target.__data__.descriptor.split(" ").join("_"));
+      svg.selectAll('circle').style('opacity', 1)
+      const label = d3.select("."+d.target.__data__.descriptor.split(" ").join("_").split("/").join("-"));
       label.transition().duration(200).style('opacity', 0);
     }
 
     // Create the scatter plot points
-    svg.selectAll('.label')
+    const labels = svg.selectAll('.label')
       .data(data)
       .enter()
       .append('text')
-      .attr('class', (d)=>{
-        return 'label ' + d.descriptor.split(" ").join("_")})
+      .attr('class', 'label')
+    
+    svg.selectAll('.label').attr('class', (d)=>{
+        return 'label ' + d.descriptor.split(" ").join("_").split("/").join("-")})
         .attr('x', (d)=>{
           if (d.value > 50) {
             return xScale(d.value) - 10
@@ -110,29 +118,29 @@ const VisualGlossaryChart = ({ data,artist }) => {
           }
         })
         .attr('y', (d) => {
-        let weight;
-        if (weights["data"].find((entry)=>{
-                  return entry.descriptor===d.descriptor})) {
-          weight = weights["data"].find((entry)=>{
-                  return entry.descriptor===d.descriptor}).weight
-        } else {
-          weight = 0.2
-        }
-        return yScale(weight) + 4
-      })
-        .style('text-anchor', (d)=>{
-          if (d.value > 50) {
-            return 'end'
+          let weight;
+          if (weights["data"].find((entry)=>{
+                    return entry.descriptor.toLowerCase()===d.descriptor.toLowerCase()})) {
+            weight = weights["data"].find((entry)=>{
+                    return entry.descriptor.toLowerCase()===d.descriptor.toLowerCase()}).weight
           } else {
-            return 'start'
+            weight = 0.2
           }
+          return yScale(weight) + 4
         })
-            .style('fill', 'white')
-      .style('font-family', 'Signika')
-      .text((d)=>{
-        return d.descriptor
-      })
-      .style('opacity', 0)
+          .style('text-anchor', (d)=>{
+            if (d.value > 50) {
+              return 'end'
+            } else {
+              return 'start'
+            }
+          })
+              .style('fill', 'white')
+        .style('font-family', 'Signika')
+        .text((d)=>{
+          return d.descriptor
+        })
+        .style('opacity', 0)
 
   }, [data,artist]);
 

@@ -2,18 +2,27 @@ import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 
 const RowChart = ({ data,setWidth,name }) => {
+
   const chartRef = useRef(null);
 
   useEffect(() => {
     if (!data || data.length === 0) return;
 
-    const margin = { top: 30, right: 10, bottom: 4, left: 146 };
+    const margin = { top: 30, right: 10, bottom: 4, left: 160 };
     const width = setWidth - margin.left - margin.right;
-    const height = data.length * 20 - margin.top - margin.bottom;
+    const height = 14 * 20 - margin.top - margin.bottom;
     
+    if (data.length > 10) {
+      data=data.slice(0,10)
+    }
+    data = data.map(entry =>{
+      entry.value = entry.value*-1
+      return entry
+    })
+
     data = data.sort((a,b)=>{
       return b.value-a.value
-    }).slice(0,10)
+    })
     
     d3.select(chartRef.current).select("svg").remove();
     const svg = d3
@@ -85,12 +94,21 @@ const RowChart = ({ data,setWidth,name }) => {
       .attr('dy', '0.35em')
       .attr('text-anchor', 'end')
       .style('font-family', 'Signika')
+      .style('font-size', (d)=>{
+        if (d.brand.length>15) {
+          return 12
+        } else {
+          return 18
+        }
+      })
       .style('text-transform', 'uppercase')
       .style('fill', 'white')
       .text(d => {
         if (d.brand === "mercedes_benz"||d.brand === "coca_cola"){
-                return d.brand.replace('_','-')}else{
-        return d.brand.replace('_',' ')
+                return d.brand.replaceAll('_','-')}else  if (d.brand.includes("&")) {
+                  return d.brand.replaceAll('_',' ')
+                }else{
+        return d.brand.replaceAll('_',' ')
       }
       });
 
