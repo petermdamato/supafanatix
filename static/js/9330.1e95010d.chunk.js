@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksupafanatix=self.webpackChunksupafanatix||[]).push([[9330],{49330:function(a){a.exports={data:[]}}}]);
