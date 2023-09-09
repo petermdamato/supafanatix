@@ -18,9 +18,7 @@ const ImageMatch = ({artist}) => {
           <div className="image-match-container-inner flex">
             <div className="image-match-headline-container flex flex-col">
               <h2 className="image-match-headline text-xl font-semibold mb-4">Artist Palette</h2>
-              <p className="image-match-dek">The palette at right shows the 100 most common colors for 
-      the artist, according to an analysis of <b>3</b> visual assets. 
-      Hover over each to get RGB and hex values.</p>
+              <p className="image-match-dek">The palette at right shows the 100 most common colors for the artist, according to an analysis of visual assets. Hover over each to get RGB and hex values.</p>
             </div>
             <ArtistPalette colorData={colors[artist.toLowerCase().replaceAll(' ','_')]}/>
             <div>

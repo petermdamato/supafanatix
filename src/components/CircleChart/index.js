@@ -54,6 +54,38 @@ const CircleChart = ({ data,setWidth,name }) => {
           .style('text-transform', 'uppercase')
           .style('font-size', 10)
           .text(row.descriptor);
+        if (rowIndex === 0) {
+            circleGroup
+              .append('text')
+              .attr('dx', ()=>{
+                if (row.artistVal > row.brandVal) {
+                  return xScale(row.artistVal)
+                } else {
+                  return xScale(row.brandVal) 
+                }
+              })
+              .attr('dy', lineY - 16)
+              .style('fill', 'white')
+              .style('opacity', 1)
+              .attr("font-size", 10)
+              .attr("text-anchor", "middle")
+              .text("HIGH")
+            circleGroup
+              .append('text')
+              .attr('dx', ()=>{
+                if (row.artistVal < row.brandVal) {
+                  return xScale(row.artistVal)
+                } else {
+                  return xScale(row.brandVal) 
+                }
+              })
+              .attr('dy', lineY - 16)
+              .style('fill', 'white')
+              .style('opacity', 1)
+              .attr("font-size", 10)
+              .attr("text-anchor", "middle")
+              .text("LOW")
+          }
 
         circleGroup
           .append('rect')

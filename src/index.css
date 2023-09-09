@@ -37,6 +37,26 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
   display:flex;
   justify-content: space-around;
 }
+@media (max-width: 500px) {
+  .nav-artist-container {
+    width:28%!important;
+    line-height:14px!important;
+    font-size:12px!important;
+  }
+  .image-container-container {
+    width:28%!important;
+  }
+  .nav-nav-link {
+    padding:10;
+  }
+  .nav-navigation li {
+    padding-left:10px!important;
+    line-height:14px!important;
+    font-size:12px!important;
+    margin-bottom:10px;
+  }
+}
+
 /* Set a default font family and font size for the app */
 body {
   font-family: Arial, sans-serif;

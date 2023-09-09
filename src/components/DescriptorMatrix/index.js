@@ -65,7 +65,7 @@ const DescriptorMatrix = ({artist,displayed,setDisplayed,page,categories}) => {
   return (
     <div className="matrix-container flex-col flex">
     <h2 className="matrix-headline text-xl font-semibold mb-4">Brand Descriptor Matrix</h2>
-       <div className="descriptor-matrix-dek">Artists are scored across many sonic, visual and vibe metrics, which helps them get matched to brands that fit these profiles. Move the sliders below to see how adjusting some metrics could help unlock new brand partners. <span className="expand-button" onClick={()=>{
+       <div className="descriptor-matrix-dek">Artists are scored across many sonic, visual and vibe metrics, which helps them get matched to brands that fit these profiles. The starting point is where your chosen artist is today. Move the sliders below to see how adjusting some metrics could help unlock new brand partners. <span className="expand-button" onClick={()=>{
         setDisplayed(displayed==="constrained"?"unconstrained":"constrained")
       }}>{displayed==='constrained'?'Show All Descriptors':'Show Top Descriptors'}</span></div>
       <div className="matrix-container-inner flex">

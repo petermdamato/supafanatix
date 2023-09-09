@@ -108,7 +108,7 @@ const MainBody = ({options,handleArtistChange,artist}) => {
     <div className="h-full app-mainpage-inner">
       <div className="h-screen fill-screen">
         <div className="flex fill-screen-inner border-bottom">
-          <div className="w-1/5 flex flex-col">
+          <div className="w-1/5 flex flex-col image-container-container">
             <div className="image-container"><img src={logo} alt="Supafanatix Logo" /></div>
           </div>
           <div className={`autocomplete-container ${displayed==="unconstrained"&&page==="Descriptor Matrix"?'autocomplete-unconstrained':'autocomplete-constrained'} flex-grow flex justify-center items-center`}>
@@ -128,7 +128,7 @@ const MainBody = ({options,handleArtistChange,artist}) => {
             </div>
             <ul className="nav-navigation pt-10 ">
               {navigation.map(entry=>{
-                return (<li key={"key-" +entry} onClick={() => handlePageSelect(entry)} className={`${entry === page ? 'page-link selected-page' : ''}`}><a href="#">{entry}</a></li>)
+                return (<li key={"key-" +entry} onClick={() => handlePageSelect(entry)} className={`${entry === page ? 'page-link selected-page' : 'nav-nav-link'}`}><a href="#">{entry}</a></li>)
               })}
             </ul>
           </div>

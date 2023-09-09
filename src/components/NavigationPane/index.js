@@ -12,7 +12,6 @@ const NavigationPane = () => {
 
   const handleNavigationClick = (navigationOption) => {
     // Handle what should happen when a navigation option is clicked
-    console.log(`Selected option: ${navigationOption.label}`);
     // You can update the state or perform other actions here
   };
 
