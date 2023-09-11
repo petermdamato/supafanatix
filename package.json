@@ -2,7 +2,7 @@
   "name": "supafanatix",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://petermdamato.github.io/supafanatix",
+  "homepage": "https://petermdamato.github.io/supafanatix",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -20,6 +20,7 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.11",
     "react-flip-move": "^3.0.5",
     "react-scripts": "5.0.1",
     "react-slider": "^2.0.6",
