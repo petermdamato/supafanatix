@@ -12,7 +12,7 @@ const VisualGlossaryChart = ({ data,artist,categories }) => {
 
     const width = 600;
     const height = 600;
-    const margin = { top: 20, right: 20, bottom: 40, left: 0 };
+    const margin = { top: 20, right: 20, bottom: 40, left: 20 };
 
     d3.select(svgRef.current).selectAll("g").remove();
     d3.select(svgRef.current).selectAll("circle").remove();
@@ -51,7 +51,7 @@ const VisualGlossaryChart = ({ data,artist,categories }) => {
       .call(d3.axisLeft(yScale))
       .append('text')
       .attr('y', 6)
-      .attr('dy', '1em')
+      .attr('dy', 0)
       .attr('dx', (height/-2) - 50)
       .attr('fill', 'currentColor')
       .attr('text-anchor', 'end')
