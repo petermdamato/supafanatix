@@ -13,7 +13,7 @@ function Leaderboard({ rankings }) {
       <FlipMove typeName="ul" className="brand-list">
         {rankings.map((ranking, index) => (
           <li key={ranking.brand} className={`brand-item ${ranking.rank<=10?'displayed':''}`}>
-            {(ranking.brand==="ibm"?'IBM':ranking.brand==="spotify"?'Spotify':ranking.brand==="Walgreens"?"Walgreen's":ranking.brand==="whatsapp"?"WhatsApp":ranking.brand==="McDonalds"?"McDonald's":ranking.brand.split("_").map(entry=>entry.replace(/\b\w/g, char => char.toUpperCase())).join(" "))}
+            {(ranking.brand==="kfc"?'KFC':ranking.brand==="ibm"?'IBM':ranking.brand==="spotify"?'Spotify':ranking.brand==="Walgreens"?"Walgreen's":ranking.brand==="whatsapp"?"WhatsApp":ranking.brand==="McDonalds"?"McDonald's":ranking.brand.split("_").map(entry=>entry.replace(/\b\w/g, char => char.toUpperCase())).join(" "))}
           </li>
         ))}
       </FlipMove>
