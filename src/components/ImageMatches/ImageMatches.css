@@ -70,6 +70,9 @@
   height:100%;
   z-index:2;
 }
+.test-fake {
+  height:0px;
+}
 .line {
   flex-grow: 1;
   height: 2px;
