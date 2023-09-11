@@ -39,7 +39,7 @@ const Overview = ({artist,labels,brandRankings,sonicSimilarities,visualSimilarit
           })[8].brand.replaceAll("_"," ").replace(/\b\w/g, match => match.toUpperCase()):''}
           </div>
           </div>
-        <div className="overview-container-right rounded-lg h-20 flex-grow h-32">{artist} and these brands share an association with {visualSimilarities.join(", ")}</div>
+        <div className="overview-container-right rounded-lg h-20 flex-grow h-32">{artist} and these brands have similar levels of association with {visualSimilarities.join(", ")}</div>
       </div>
       <div className="flex-grow relative mt-4">
         <div className="w-1/4 h-32 rounded-tl-lg rounded-bl-lg overview-container-left absolute left-0 top-0">
@@ -54,7 +54,7 @@ const Overview = ({artist,labels,brandRankings,sonicSimilarities,visualSimilarit
           })[8].brand.replaceAll("_"," ").replace(/\b\w/g, match => match.toUpperCase()):''}
           </div>
           </div>
-        <div className="overview-container-right rounded-lg h-20 flex-grow h-32">{artist} and these brands share an association with {sonicSimilarities.join(", ")}</div>
+        <div className="overview-container-right rounded-lg h-20 flex-grow h-32">{artist} and these brands have similar levels of association with {sonicSimilarities.join(", ")}</div>
       </div>
     </div>
 
