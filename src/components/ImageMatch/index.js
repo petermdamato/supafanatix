@@ -30,10 +30,9 @@ const ImageMatch = ({artist}) => {
   const secondBrand = secondImage.join("_")
   const thirdBrand = thirdImage.join("_")
 
-  console.log(images.default[thirdBrand],thirdIndex[thirdIndex.length - 1])
   let imagesData 
   
-  imagesData = [{"artist-image":images.default[artist.toLowerCase().replaceAll(' ','_')][0],"brand-image":images.default[firstBrand][firstIndex[firstIndex.length-1]-1]},{"artist-image":images.default[artist.toLowerCase().replaceAll(' ','_')][1],"brand-image":images.default[secondBrand][secondIndex[secondIndex.length-1]-1]},{"artist-image":images.default[artist.toLowerCase().replaceAll(' ','_')][2],"brand-image":images.default[thirdBrand][thirdIndex[thirdIndex.length-1]-1]}]
+  imagesData = [{"brand":firstBrand,"artist-image":images.default[artist.toLowerCase().replaceAll(' ','_')][0],"brand-image":images.default[firstBrand][firstIndex[firstIndex.length-1]-1]},{"brand":secondBrand,"artist-image":images.default[artist.toLowerCase().replaceAll(' ','_')][1],"brand-image":images.default[secondBrand][secondIndex[secondIndex.length-1]-1]},{"brand":thirdBrand,"artist-image":images.default[artist.toLowerCase().replaceAll(' ','_')][2],"brand-image":images.default[thirdBrand][thirdIndex[thirdIndex.length-1]-1]}]
   
   return (<div className="image-match-container flex-col flex">
           <div className="image-match-container-inner flex">

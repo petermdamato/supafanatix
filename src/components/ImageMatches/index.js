@@ -8,7 +8,9 @@ const ImageMatches = ({ imagesData }) => {
       {imagesData.map((item, index) => (
         <div key={index} className="row-item">
           <div className="circle-container">
-            <img src={item['artist-image']} alt="Artist" className="circle-image" />
+            <div className="brand-image">
+              <img src={item['artist-image']} alt="Artist" className="circle-image" />
+            </div>
             <div className="circle" />
           </div>
           <div className="line"></div>
@@ -17,6 +19,7 @@ const ImageMatches = ({ imagesData }) => {
               <img src={item['brand-image']} alt="Brand"  />
               <div className="circle" />
             </div>
+            <div className="brand-name-image">{item['brand']}</div>
           </div>
         </div>
       ))}

@@ -20,6 +20,13 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 .\1ald77x.Mui-focused {
   color:white!important;
 }
+.brand-name-image {
+  margin-left:20px!important;
+  color:white;
+  font-size:12px;
+  text-align: center;
+  text-transform: uppercase;
+}
 .MuiFormLabel-root{color:white!important} 
 /* Set box-sizing to border-box for all elements */
 * {
