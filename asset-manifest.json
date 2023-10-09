@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/supafanatix/static/css/main.a8093198.css",
-    "main.js": "/supafanatix/static/js/main.121caf7d.js",
+    "main.css": "/supafanatix/static/css/main.58a3e0c6.css",
+    "main.js": "/supafanatix/static/js/main.1a1ba2b8.js",
     "static/js/9330.2e97787b.chunk.js": "/supafanatix/static/js/9330.2e97787b.chunk.js",
     "static/js/9022.38b8bb0d.chunk.js": "/supafanatix/static/js/9022.38b8bb0d.chunk.js",
     "static/js/6839.007c0e96.chunk.js": "/supafanatix/static/js/6839.007c0e96.chunk.js",
@@ -133,11 +133,11 @@
     "static/js/336.7a605159.chunk.js": "/supafanatix/static/js/336.7a605159.chunk.js",
     "static/media/logo.png": "/supafanatix/static/media/logo.fc4693b769afb648f134.png",
     "index.html": "/supafanatix/index.html",
-    "main.a8093198.css.map": "/supafanatix/static/css/main.a8093198.css.map",
-    "main.121caf7d.js.map": "/supafanatix/static/js/main.121caf7d.js.map"
+    "main.58a3e0c6.css.map": "/supafanatix/static/css/main.58a3e0c6.css.map",
+    "main.1a1ba2b8.js.map": "/supafanatix/static/js/main.1a1ba2b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8093198.css",
-    "static/js/main.121caf7d.js"
+    "static/css/main.58a3e0c6.css",
+    "static/js/main.1a1ba2b8.js"
   ]
 }
