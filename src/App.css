@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;700&family=Signika:wght@400;500&display=swap');
+
 /* App container */
 .app {
   display: flex;
@@ -39,4 +41,15 @@
     flex-direction: column;
     align-items: center;
   }
+}
+html, body {
+  background-color: black;
+}
+.MuiButtonBase-root #text {
+  fill:white!important;
+}
+.login-page * {
+  background-color:black;
+  font-family:Signika;
+  font-weight:200;
 }
